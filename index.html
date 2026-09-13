@@ -50,13 +50,13 @@
     background:var(--surface); border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow);
     padding:16px 22px;
   }
-  .brand{ display:flex; align-items:center; gap:16px; }
-  .brand img{ height:54px; width:auto; display:block; }
-  .brand .divider{ width:1px; align-self:stretch; background:var(--border-strong); }
-  .brand .titles{ display:flex; flex-direction:column; gap:2px; }
-  .brand h1{ font-size:21px; font-weight:800; letter-spacing:.04em; color:var(--ink); }
+  .brand{ display:flex; align-items:center; gap:16px; min-width:0; flex:1 1 240px; }
+  .brand img{ height:54px; width:auto; display:block; flex:0 0 auto; }
+  .brand .divider{ width:1px; align-self:stretch; background:var(--border-strong); flex:0 0 auto; }
+  .brand .titles{ display:flex; flex-direction:column; gap:2px; min-width:0; }
+  .brand h1{ font-size:21px; font-weight:800; letter-spacing:.04em; color:var(--ink); text-wrap:balance; }
   .brand .subtitle{ font-size:12px; font-weight:600; color:var(--accent); letter-spacing:.07em; text-transform:uppercase; }
-  .updated{ text-align:right; font-size:12px; color:var(--ink-faint); line-height:1.5; }
+  .updated{ text-align:right; font-size:12px; color:var(--ink-faint); line-height:1.5; flex:0 0 auto; }
   .updated .date{ font-family:"IBM Plex Mono",monospace; font-weight:600; color:var(--ink-dim); font-size:13px; }
 
   /* ---- Section ---- */
@@ -125,6 +125,13 @@
   @media (max-width:640px){
     .topbar{ flex-direction:column; align-items:flex-start; }
     .updated{ text-align:left; }
+  }
+  @media (max-width:420px){
+    .wrap{ padding-left:16px; padding-right:16px; }
+    .brand{ gap:12px; }
+    .brand img{ height:42px; }
+    .brand h1{ font-size:17px; letter-spacing:.02em; }
+    .brand .subtitle{ font-size:10.5px; }
   }
 </style>
 <style>*{box-sizing:border-box;margin:0;}</style>
